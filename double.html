@@ -1,0 +1,103 @@
+<style media="screen">
+  .lightboxxPageFill{
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index:10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.17);
+  }
+  .lightboxx{
+    min-width: 300px;
+    max-width: 600px;
+    height: 500px;
+    z-index: 11;
+
+    padding: 10px;
+
+    text-align: center;
+    border: 20px solid gray;
+    background: white;
+  }
+  #closeLightboxx{
+    text-align: right;
+    cursor: pointer;
+  }
+  #x{
+    color: black;
+    padding: 0;
+  }
+
+  .meerkatt{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /*height: 200px;*/
+    max-height: 50px;
+    padding: 20px;
+    background: #3a75c4;
+    color: white;
+  }
+  .meerkatt h3{
+    color: white;
+  }
+</style>
+
+<div id="lightboxxPageFill" class="lightboxxPageFill">
+  <div class="lightboxx">
+    <div id="closeLightboxx">
+      <i id="x" class="fa fa-times"></i>
+    </div>
+    <h2>Something important</h2>
+    <p>
+      blah blah blah
+    </p>
+    <p>
+      blah blah
+    </p>
+    <img src="https://www.lung.org/images/ala-logo-head.png" alt=""/>
+    <p>
+      blah blhablhablhb
+    </p>
+    <p>
+      blahbalhb
+    </p>
+  </div>
+</div>
+
+<div id="meerkatt" class="meerkatt">
+  <div id="closeMeerkatt">
+    <i id="x" class="fa fa-times"></i>
+  </div>
+
+  <h3>blb a hbla hbab lbahbl</h3>
+  <p> ahbabl bahbla hbablbahb lahbabl bahblahb ablbahblah bablbahblahba blbahblahbablb ahblahbab lbah bla hba </p>
+</div>
+
+<script type="text/javascript">
+  // var lightboxx = document.getElementById("lightboxxPageFill");
+  // lightboxx.parentNode.removeChild(lightboxx);
+  // document.getElementById("content").insertBefore(lightboxx, document.getElementById("content").firstChild);
+
+  // close lightbox
+  document.getElementById("closeLightboxx").addEventListener("click", function() {
+    document.getElementById("lightboxxPageFill").parentNode.removeChild(document.getElementById("lightboxxPageFill"));
+    // document.getElementById("meerkatt").style.display = "block";
+    $("#meerkatt").show("slow");
+  })
+
+  document.getElementById("closeMeerkatt").addEventListener("click", function() {
+    document.getElementById("meerkatt").parentNode.removeChild(document.getElementById("meerkatt"));
+  })
+
+  var meerkat = document.getElementById("meerkatt");
+  meerkat.parentNode.removeChild(meerkat);
+  document.getElementById("content").insertBefore(meerkat, document.getElementById("content").firstChild);
+</script>
