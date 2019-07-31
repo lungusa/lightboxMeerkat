@@ -1,96 +1,101 @@
 <style>
-.lightbox_content {background-color: rgba(58, 117, 196, 1); text-align: left; width: 100%; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; left: 0; bottom: -180px; transition: all 1s; z-index: 9998;}
-.lightbox_content.up {bottom: 0;}
+.lightbox_content2 {background-color: rgba(58, 117, 196, 1); text-align: left; width: 100%; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; left: 0; bottom: -180px; transition: all 1s; z-index: 9998;}
+.lightbox_content2.up {bottom: 0;}
 #footer2015.meerkat {padding: 50px 0 190px !important;}
-#lbHero {<t:if test="lightbox_hero.length > 0"><t:list id="lightbox_hero">background-image: url("https://www.lung.org${path}");</t:list></t:if> background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); height: auto; padding: 0; display: block; position: relative;}
-#lbHero img {width: 100%; max-width: none; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-filter: none !important; filter: none !important; object-fit: cover; object-position: 50% 50%;}
-#lbHeadline {text-align: left; width: 100%; max-width: none; margin: 0 auto;}
-#lbHeadline p {font-size: 18px; font-weight: 700; line-height: 1.2em; letter-spacing: 0; color: #ffffff; margin-bottom: 2px; padding: 0 0 0 12px;}
-.lbContent {text-align: left; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); padding: 0 0 0 12px; box-sizing: border-box;}
-.lbContent p:empty {display: none;}
-.lbContent p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 7px;}
-.lbContent p strong {font-weight: 900;}
-#messageContent {background-color: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px 17px; position: relative;}
-#messageContent form {width: 100%;}
-.lightbox_content .table-cell {vertical-align: top; display: table-cell;}
-.lightbox_content .icon {background-color: rgba(255,255,255,0.1); min-width: 70px; min-height: 70px; margin-left: 0; margin-bottom: 0; display: inline-block; border: 3px solid #ffffff; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
-.lightbox_content .icon img {max-width: 70px; margin: 0 auto;}
-.lightbox_content #survey.responsive-form {margin-top: 0; margin-bottom: 0 !important;}
-.lightbox_content #survey.responsive-form label {font-weight: 700; margin-right: 5px;}
-.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 16px !important; width: 94% !important; width: calc(100% - 24px) !important; width: -webkit-calc(100% - 24px) !important; width: -moz-calc(100% - 24px) !important; width: -ms-calc(100% - 24px) !important; width: -o-calc(100% - 24px) !important; max-width: none !important; margin: 0 !important; padding: 8px 12px !important; border: 0 none !important; position: inherit !important; left: inherit !important;}
-.lightbox_content #survey.responsive-form #webform-component-honeypot .honeypot {display: none;}
-.lightbox_content #survey.responsive-form .table-cell.overlap {vertical-align: top; width: 20%; white-space: nowrap;}
-.lightbox_content #survey.responsive-form .form-item input[type="submit"].button.blue {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 38px; color: #ffffff; background-color: #3a75c4; width: auto; height: 38px; margin: 0 auto 0 -25px; padding: 0 20px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
-.lightbox_content #survey.responsive-form .form-item input[type="submit"].button.red {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 36px; color: #ffffff; background-color: #f77f00; width: auto; height: 36px; margin: 0 auto 0 10px; padding: 0 30px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
-.lightbox_content #survey.responsive-form .form-item input[type="submit"].button.blue:hover, .lightbox_content #survey.responsive-form .form-item input[type="submit"].button.red:hover {background-color: #bad80a;}
-#thanksContent {text-align: center; background: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px; box-sizing: border-box; display: none; position: relative;}
-#thanksContent p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 0;}
-#thanksContent p strong {font-size: 18px; font-weight: 700;}
-p.close-lightbox {margin-bottom: 0;}
-.lbContent a.btn.red {font-size: 18px; font-weight: 700; color: #ffffff; line-height: 50px; background: #ed1b2d; height: 50px; margin: 20px auto 0; padding: 0 30px; display: inline-block; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px;}
-#light.lightbox_content .close-lightbox a {font-size: 0px; font-weight: 900; line-height: normal; color: transparent; text-align: center;  text-transform: uppercase; vertical-align: middle; background-color: transparent; width: auto; height: auto; margin: 0; padding: 0; display: block; border-radius: 50%; border: 0 solid #ffffff; filter: none; float: none; overflow: hidden; position: absolute; right: 10px; z-index: 2;}
-#light.lightbox_content .close-lightbox a:hover {cursor: pointer;}
-.lightbox_content .fa-times {font-size: 16px; color: #ffffff; line-height: normal; margin: 2px auto 0; padding: 0; position: relative;}
-#light.lightbox_content .close-lightbox a:hover .fa-times {color: #bad80a;}
-.lightbox_content #survey.responsive-form .form-item label.error {color: #ffffff !important; background-color: #ed1b2d; min-width: 100px !important; max-width: none !important; margin: 5px 0 -10px !important; padding-left: 3px !important; padding-right: 3px; display: table !important;}
+
+
+/*#lbHero2 {<t:if test="lightbox_hero.length > 0"><t:list id="lightbox_hero">background-image: url("https://www.lung.org${path}");</t:list></t:if> background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); height: auto; padding: 0; display: block; position: relative;}*/
+#lbHero2 {background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); height: auto; padding: 0; display: block; position: relative;}
+
+
+#lbHero2 img {width: 100%; max-width: none; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-filter: none !important; filter: none !important; object-fit: cover; object-position: 50% 50%;}
+#lbHeadline2 {text-align: left; width: 100%; max-width: none; margin: 0 auto;}
+#lbHeadline2 p {font-size: 18px; font-weight: 700; line-height: 1.2em; letter-spacing: 0; color: #ffffff; margin-bottom: 2px; padding: 0 0 0 12px;}
+.lbContent2 {text-align: left; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); padding: 0 0 0 12px; box-sizing: border-box;}
+.lbContent2 p:empty {display: none;}
+.lbContent2 p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 7px;}
+.lbContent2 p strong {font-weight: 900;}
+#messageContent2 {background-color: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px 17px; position: relative;}
+#messageContent2 form {width: 100%;}
+.lightbox_content2 .table-cell {vertical-align: top; display: table-cell;}
+.lightbox_content2 .icon2 {background-color: rgba(255,255,255,0.1); min-width: 70px; min-height: 70px; margin-left: 0; margin-bottom: 0; display: inline-block; border: 3px solid #ffffff; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
+.lightbox_content2 .icon2 img {max-width: 70px; margin: 0 auto;}
+.lightbox_content2 #survey2.responsive-form {margin-top: 0; margin-bottom: 0 !important;}
+.lightbox_content2 #survey2.responsive-form label {font-weight: 700; margin-right: 5px;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="text"].form-text {font-size: 16px !important; width: 94% !important; width: calc(100% - 24px) !important; width: -webkit-calc(100% - 24px) !important; width: -moz-calc(100% - 24px) !important; width: -ms-calc(100% - 24px) !important; width: -o-calc(100% - 24px) !important; max-width: none !important; margin: 0 !important; padding: 8px 12px !important; border: 0 none !important; position: inherit !important; left: inherit !important;}
+.lightbox_content2 #survey2.responsive-form #webform-component-honeypot .honeypot {display: none;}
+.lightbox_content2 #survey2.responsive-form .table-cell.overlap {vertical-align: top; width: 20%; white-space: nowrap;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.blue {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 38px; color: #ffffff; background-color: #3a75c4; width: auto; height: 38px; margin: 0 auto 0 -25px; padding: 0 20px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 36px; color: #ffffff; background-color: #f77f00; width: auto; height: 36px; margin: 0 auto 0 10px; padding: 0 30px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.blue:hover, .lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red:hover {background-color: #bad80a;}
+#thanksContent2 {text-align: center; background: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px; box-sizing: border-box; display: none; position: relative;}
+#thanksContent2 p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 0;}
+#thanksContent2 p strong {font-size: 18px; font-weight: 700;}
+p.close-lightbox2 {margin-bottom: 0;}
+.lbContent2 a.btn.red {font-size: 18px; font-weight: 700; color: #ffffff; line-height: 50px; background: #ed1b2d; height: 50px; margin: 20px auto 0; padding: 0 30px; display: inline-block; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px;}
+#light2.lightbox_content2 .close-lightbox2 a {font-size: 0px; font-weight: 900; line-height: normal; color: transparent; text-align: center;  text-transform: uppercase; vertical-align: middle; background-color: transparent; width: auto; height: auto; margin: 0; padding: 0; display: block; border-radius: 50%; border: 0 solid #ffffff; filter: none; float: none; overflow: hidden; position: absolute; right: 10px; z-index: 2;}
+#light2.lightbox_content2 .close-lightbox2 a:hover {cursor: pointer;}
+.lightbox_content2 .fa-times {font-size: 16px; color: #ffffff; line-height: normal; margin: 2px auto 0; padding: 0; position: relative;}
+#light2.lightbox_content2 .close-lightbox2 a:hover .fa-times {color: #bad80a;}
+.lightbox_content2 #survey2.responsive-form .form-item label.error {color: #ffffff !important; background-color: #ed1b2d; min-width: 100px !important; max-width: none !important; margin: 5px 0 -10px !important; padding-left: 3px !important; padding-right: 3px; display: table !important;}
 
 @media (max-width: 1024px) {
 	#footer2015.meerkat {padding: 40px 0 175px !important;}
 }
 @media (max-width: 979px) {
-	.lightbox_content.up {bottom: 49px;}
+	.lightbox_content2.up {bottom: 49px;}
 	#footer2015.meerkat {padding: 40px 0 225px !important;}
 }
 @media only screen and (max-width: 699px) {
 	#footer2015.meerkat {padding: 20px 0 230px !important;}
 }
 @media (max-width: 667px) {
-	#lbHero {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
-	.lbContent {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
-	#thanksContent {text-align: left;}
-	#thanksContent p {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
+	#lbHero2 {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
+	.lbContent2 {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
+	#thanksContent2 {text-align: left;}
+	#thanksContent2 p {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
 }
 @media (max-width: 567px) {
-	#lbHeadline p {font-size: 16px; padding: 0 0 0 10px;}
-	.lbContent {padding: 0 0 0 10px;}
-	.lbContent p {font-size: 14px;}
-	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 14px !important; width: 80% !important; width: calc(100% - 16px) !important; width: -webkit-calc(100% - 16px) !important; width: -moz-calc(100% - 16px) !important; width: -ms-calc(100% - 16px) !important; width: -o-calc(100% - 16px) !important; padding: 7px 8px !important;}
-	.lightbox_content #survey.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; line-height: 31px; height: 31px; padding: 0 20px;}
-	#thanksContent {padding: 15px 10px 15px 20px;}
-	#thanksContent p {font-size: 14px;}
-	#thanksContent p strong {font-size: 16px;}
-	.lightbox_content .icon {min-width: 50px; min-height: 50px;}
-	.lightbox_content .icon img {max-width: 50px;}
+	#lbHeadline2 p {font-size: 16px; padding: 0 0 0 10px;}
+	.lbContent2 {padding: 0 0 0 10px;}
+	.lbContent2 p {font-size: 14px;}
+	.lightbox_content2 #survey2.responsive-form .form-item input[type="text"].form-text {font-size: 14px !important; width: 80% !important; width: calc(100% - 16px) !important; width: -webkit-calc(100% - 16px) !important; width: -moz-calc(100% - 16px) !important; width: -ms-calc(100% - 16px) !important; width: -o-calc(100% - 16px) !important; padding: 7px 8px !important;}
+	.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; line-height: 31px; height: 31px; padding: 0 20px;}
+	#thanksContent2 {padding: 15px 10px 15px 20px;}
+	#thanksContent2 p {font-size: 14px;}
+	#thanksContent2 p strong {font-size: 16px;}
+	.lightbox_content2 .icon2 {min-width: 50px; min-height: 50px;}
+	.lightbox_content2 .icon2 img {max-width: 50px;}
 }
 @media (max-width: 480px) {
-	.lightbox_content .icon {display: none;}
+	.lightbox_content2 .icon2 {display: none;}
 }
 @media (max-width: 375px) {
-	#light.lightbox_content .close-lightbox a {right: 15px;}
-	#lbHero {width: 90%; width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); width: calc(100% - 25px);}
-	.lbContent {width: 97%; width: -webkit-calc(100% - 8px); width: -moz-calc(100% - 8px); width: -ms-calc(100% - 8px); width: -o-calc(100% - 8px); width: calc(100% - 8px);}
+	#light2.lightbox_content2 .close-lightbox2 a {right: 15px;}
+	#lbHero2 {width: 90%; width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); width: calc(100% - 25px);}
+	.lbContent2 {width: 97%; width: -webkit-calc(100% - 8px); width: -moz-calc(100% - 8px); width: -ms-calc(100% - 8px); width: -o-calc(100% - 8px); width: calc(100% - 8px);}
 }
 </style>
 
-<div id="popupDiv">
-	<div id="light" class="lightbox_content">
-		<div id="messageContent">
-			<p class="close-lightbox"><a id="messageClose" href="javascript:void(0)" onclick = "document.getElementById('light').style.display='none';"><i class="fa fa-times"></i></a></p>
+<div id="popupDiv2" style="display: none;">
+	<div id="light2" class="lightbox_content2">
+		<div id="messageContent2">
+			<p class="close-lightbox2"><a id="messageClose2" href="javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';"><i class="fa fa-times"></i></a></p>
 			<div class="table-cell">
-				<span class="icon">
+				<span class="icon2">
 					<img src="https://www.lung.org/images/icons/email-icon-ko.png" alt="email icon">
 				</span>
 			</div>
 			<div class="table-cell">
-				<div id="lbHero">
-					<t:if test="lightbox_banner != null"><t:if test="lightbox_banner.length > 0"><t:list id="lightbox_banner"><img src="https://www.lung.org${path}" alt="${image.alt_text}" /></t:list></t:if>
-					<div id="lbHeadline">
+				<div id="lbHero2">
+					<!-- <t:if test="lightbox_banner != null"><t:if test="lightbox_banner.length > 0"><t:list id="lightbox_banner2"><img src="https://www.lung.org${path}" alt="${image.alt_text}" /></t:list></t:if> -->
+					<div id="lbHeadline2">
 						<p>${lightbox_headline}</p>
 					</div>
 				</div>
-				<div class="lbContent">
+				<div class="lbContent2">
 					<t:if test="lightbox_text != null">${lightbox_text}</t:if>
-					<div id="survey" class="responsive-form">
+					<div id="survey2" class="responsive-form">
 						<form action="https://action.lung.org/site/SSurvey" method="post" name="responsiveSurvey" id="responsiveSurvey" class="webform-client-form hideSubmitButton-processed table" target="redirectframe">
 							<div class="table-cell">
 								<!-- hiddeninput -->
@@ -143,8 +148,8 @@ p.close-lightbox {margin-bottom: 0;}
 			</div>
 		</div>
 
-		<div id="thanksContent">
-			<p class="close-lightbox"><a id="thanksClose" href="javascript:void(0)" onclick = "document.getElementById('light').style.display='none';"><i class="fa fa-times"></i></a></p>
+		<div id="thanksContent2">
+			<p class="close-lightbox2"><a id="thanksClose2" href="javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';"><i class="fa fa-times"></i></a></p>
 			<p><strong>Thank you for joining our online&nbsp;community!</strong><br />We'll be in touch soon with news, resources and stories about lung&nbsp;health.</p>
 		</div>
 
@@ -160,26 +165,26 @@ p.close-lightbox {margin-bottom: 0;}
 				$('#enews_signup').hide();
 				var ScrollTop = parseInt($(window).scrollTop());
 				if (ScrollTop > 500) {
-					$('.lightbox_content').addClass('up');
+					$('.lightbox_content2').addClass('up');
 					$('#footer2015').addClass('meerkat');
 					$(window).unbind('scroll');
 
 				} else {
 					var delay=7500;
 					setTimeout(function() {
-						$('.lightbox_content').addClass('up');
+						$('.lightbox_content2').addClass('up');
 						$('#footer2015').addClass('meerkat');
 					},delay);
 				}
 			}
-			$('#messageClose').click(function() {
-				$('.lightbox_content').removeClass('up');
+			$('#messageClose2').click(function() {
+				$('.lightbox_content2').removeClass('up');
 				$('#footer2015').removeClass('meerkat');
 				createCookie('${cookie_name}', true, 1);
 				return false;
 			});
-			$('#thanksClose').click(function() {
-				$('#popupDiv').hide();
+			$('#thanksClose2').click(function() {
+				$('#popupDiv2').hide();
 				$('#footer2015').removeClass('meerkat');
 				createCookie('${cookie_name}', true, 20*365);
 				return false;
@@ -205,17 +210,17 @@ p.close-lightbox {margin-bottom: 0;}
 					}
 				},
 				submitHandler: function(form) {
-					$('#messageContent').hide();
+					$('#messageContent2').hide();
 					createCookie('${cookie_name}', true, 20*365);
 					form.submit();
-					$('#thanksContent').show().delay(12500).fadeOut();
-					$('#popupDiv').show().delay(12500).fadeOut();
+					$('#thanksContent2').show().delay(12500).fadeOut();
+					$('#popupDiv2').show().delay(12500).fadeOut();
 					$('#footer2015').removeClass('meerkat');
 				}
 			});
 		});
 
-		var lightBox = document.getElementById('light').style.display='block';
+		var lightBox = document.getElementById('light2').style.display='block';
 		function createCookie(name,value,days) {
 			if (days) {
 				var date = new Date();
