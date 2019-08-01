@@ -345,7 +345,7 @@ p.close-lightbox2 {margin-bottom: 0;}
 				<div class="lbContent2">
 					<t:if test="lightbox_text != null">${lightbox_text}</t:if>
 					<div id="survey2" class="responsive-form">
-						<form action="https://action.lung.org/site/SSurvey" method="post" name="responsiveSurvey" id="responsiveSurvey" class="webform-client-form hideSubmitButton-processed table" target="redirectframe">
+						<form action="https://action.lung.org/site/SSurvey" method="post" name="responsiveSurvey" id="responsiveSurvey2" class="webform-client-form hideSubmitButton-processed table" target="redirectframe">
 							<div class="table-cell">
 								<!-- hiddeninput -->
 								<input id="cons_info_component" name="cons_info_component" type="hidden" value="t">
@@ -570,6 +570,36 @@ $(document).ready(function() {
 			$('#popupDiv').show().delay(7500).fadeOut();
 		}
 	});
+
+	$('#responsiveSurvey2').validate({
+		rules: {
+			cons_email : {
+			required: true,
+			email: true
+			},
+			'3264_56280_7_103920' : {
+			maxlength: 0
+			}
+		},
+		messages: {
+			cons_email : {
+			required : 'Email field is required',
+			email : 'Email is not valid'
+			},
+			'3264_56280_7_103920' : {
+			maxlength: 'Spam attempt detected'
+			}
+		},
+		submitHandler: function(form) {
+			$('#messageContent2').hide();
+			createCookie('${cookie_name}', true, 20*365);
+			form.submit();
+			$('#thanksContent2').show().delay(12500).fadeOut();
+			$('#popupDiv2').show().delay(12500).fadeOut();
+			$('#footer2015').removeClass('meerkat');
+		}
+	});
+
 });
 </script>
 
