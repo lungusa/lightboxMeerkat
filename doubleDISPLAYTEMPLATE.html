@@ -311,7 +311,9 @@ p.close-lightbox2 {margin-bottom: 0;}
 		</div>
 
 	</div>
-	<a id="hide" href="javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><div id="fade" class="black_overlay"></div></a>
+	<!-- <a id="hide" href="javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><div id="fade" class="black_overlay"></div></a> -->
+	<a id="hide" href="javascript:void(0)"><div id="fade" class="black_overlay"></div></a>
+
 </div>
 
 <!--
@@ -419,11 +421,14 @@ p.close-lightbox2 {margin-bottom: 0;}
 	$(window).bind('scroll load', function() {
 		$(document).ready(function() {
       console.log("${cookie_name}");
-			if (!readCookie('${cookie_name}') && showLightbox == true ) {
+			// if (!readCookie('${cookie_name}') && showLightbox == true ) {
+			if (!readCookie('${cookie_name}') ) {
 				var ScrollTop = parseInt($(window).scrollTop());
 				console.log(ScrollTop);
 				if (ScrollTop > 1000) {
 					$('#popupDiv').show();
+					var lightBox = document.getElementById('light').style.display='block';
+					document.getElementById('fade').style.display='block';
 					$(window).unbind('scroll');
 				} else {
 					// var delay=7500;
@@ -437,9 +442,10 @@ p.close-lightbox2 {margin-bottom: 0;}
 
 
       document.getElementById("fade").addEventListener("click", function(){
-        if (document.getElementById("thanksContent").style.display = "block") {
-          $('#popupDiv').remove();
+        if (document.getElementById("thanksContent").style.display == "block") {
+          $('#popupDiv').hide();
           $('#popupDiv2').remove();
+					$('#popupDiv').remove();
         }
       })
 
@@ -504,7 +510,9 @@ p.close-lightbox2 {margin-bottom: 0;}
 			});
 		});
 
-		var lightBox = document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';
+		// how did this end up here?
+		// var lightBox = document.getElementById('light').style.display='block';
+		// document.getElementById('fade').style.display='block';
 
 		function createCookie(name,value,days) {
 			if (days) {

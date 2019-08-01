@@ -96,7 +96,7 @@ p.close-lightbox2 {margin-bottom: 0;}
 				<div class="lbContent2">
 					<t:if test="lightbox_text != null">${lightbox_text}</t:if>
 					<div id="survey2" class="responsive-form">
-						<form action="https://action.lung.org/site/SSurvey" method="post" name="responsiveSurvey" id="responsiveSurvey" class="webform-client-form hideSubmitButton-processed table" target="redirectframe">
+						<form action="https://action.lung.org/site/SSurvey" method="post" name="responsiveSurvey2" id="responsiveSurvey2" class="webform-client-form hideSubmitButton-processed table" target="redirectframe">
 							<div class="table-cell">
 								<!-- hiddeninput -->
 								<input id="cons_info_component" name="cons_info_component" type="hidden" value="t">
@@ -190,7 +190,7 @@ p.close-lightbox2 {margin-bottom: 0;}
 				return false;
 			});
 
-			$('#responsiveSurvey').validate({
+			$('#responsiveSurvey2').validate({
 				rules: {
 					cons_email : {
 					required: true,
