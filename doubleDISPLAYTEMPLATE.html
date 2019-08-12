@@ -36,7 +36,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-family: aaux-next, sans-serif; font-size: 17px; font-weight: 500; text-align: center; color: #555559; width: 100%; max-width: 320px; height: 38px; margin: 20px 0 0; padding: 4px 10px 6px; border-radius: 0px; border: 1px solid #ed1b2d; -webkit-appearance: none; position: relative; left: 0;}
 
-.lightbox_content #survey.responsive-form #webform-component-honeypot .honeypot {display: none;}
+.lightbox_content #survey.responsive-form #webform-component-hnypt .hnypt {display: none;}
 
 #survey.responsive-form .form-item input[type="submit"].button.red {font-family: aaux-next, sans-serif; font-size: 18px; font-weight: 800; line-height: 50px; text-align: center; text-decoration: none; text-transform: uppercase; color: #ffffff; background-color: #ed1b2d; width: auto; height: 50px; margin: 20px 10px; padding: 0 20px; display: inline-block; border: 0 none; cursor: pointer; position: relative;}
 
@@ -205,7 +205,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .lightbox_content2 #survey2.responsive-form {margin-top: 0; margin-bottom: 0 !important;}
 .lightbox_content2 #survey2.responsive-form label {font-weight: 700; margin-right: 5px;}
 .lightbox_content2 #survey2.responsive-form .form-item input[type="text"].form-text {font-size: 16px !important; width: 94% !important; width: calc(100% - 24px) !important; width: -webkit-calc(100% - 24px) !important; width: -moz-calc(100% - 24px) !important; width: -ms-calc(100% - 24px) !important; width: -o-calc(100% - 24px) !important; max-width: none !important; margin: 0 !important; padding: 8px 12px !important; border: 0 none !important; position: inherit !important; left: inherit !important;}
-.lightbox_content2 #survey2.responsive-form #webform-component-honeypot .honeypot {display: none;}
+.lightbox_content2 #survey2.responsive-form #webform-component-hnypt .hnypt {display: none;}
 .lightbox_content2 #survey2.responsive-form .table-cell.overlap {vertical-align: top; width: 20%; white-space: nowrap;}
 .lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.blue {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 38px; color: #ffffff; background-color: #3a75c4; width: auto; height: 38px; margin: 0 auto 0 -25px; padding: 0 20px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
 .lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 36px; color: #ffffff; background-color: #f77f00; width: auto; height: 36px; margin: 0 auto 0 10px; padding: 0 30px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
@@ -273,7 +273,7 @@ p.close-lightbox2 {margin-bottom: 0;}
 			<div class="lbContent">
         <h2>${lightbox_headline}</h2>
 				<p>${lightbox_text}</p>
-				<div id="survey" class="responsive-form">
+				<!-- <div id="survey" class="responsive-form">
 						<form action="https://action.lung.org/site/SSurvey" method="post" name="responsiveSurvey" id="responsiveSurvey" class="webform-client-form hideSubmitButton-processed table" target="redirectframe">
 							<div class="table-cell">
 								<input id="cons_info_component" name="cons_info_component" type="hidden" value="t">
@@ -285,9 +285,9 @@ p.close-lightbox2 {margin-bottom: 0;}
 								</div>
 								<input type="checkbox" name="3264_71526_3_103451" id="3264_71526_3_103451_1" value="4281" checked="checked" style="display: none;">
 								<input type="checkbox" name="3264_71526_3_103451" id="3264_71526_3_103451_2" value="4313" checked="checked" style="display: none;">
-								<div class="form-item" id="webform-component-honeypot">
-									<label for="3264_71526_2_103449" class="honeypot">Please leave this field empty:</label>
-									<input type="text" name="3264_71526_2_103449" id="3264_71526_2_103449" value="" alt="This field is used to prevent form submission by scripts." class="honeypot">
+								<div class="form-item" id="webform-component-hnypt">
+									<label for="3264_71526_2_103449" class="hnypt">Please leave this field empty:</label>
+									<input type="text" class="password_alt" name="3264_71526_2_103449" id="3264_71526_2_103449" value="" alt="This field is used to prevent form submission by scripts." class="hnypt">
 								</div>
 								<div style="display: none;">
 									<label for="denySubmit">Spam Control Text:</label>
@@ -301,6 +301,55 @@ p.close-lightbox2 {margin-bottom: 0;}
 								<input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="71526">
 							</div>
 						</form>
+				</div> -->
+				<div id="survey" class="responsive-form">
+					<form action="https://action.lung.org/site/SSurvey" method="post" name="responsiveSurvey" id="responsiveSurvey" class="webform-client-form hideSubmitButton-processed table" target="redirectframe">
+						<div class="table-cell">
+							<!-- hiddeninput -->
+							<input id="cons_info_component" name="cons_info_component" type="hidden" value="t">
+							<input type="checkbox" name="s_rememberMe" id="s_rememberMe" checked="checked" style="display: none;">
+							<input type="hidden" id="remember_me_opt_in_requested" name="remember_me_opt_in_requested" value="true">
+							<div class="form-item" id="webform-component-email">
+								<label for="cons_email" style="display: none;">Email Address:</label>
+								<input type="text" name="cons_email" id="cons_email" value="" size="32" maxlength="255" placeholder="Email Address" class="form-text required">
+							</div>
+
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_1" class="checkbox" value="4304" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_2" class="checkbox" value="4307" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_3" class="checkbox" value="4306" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_4" class="checkbox" value="4320" checked="checked" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_5" class="checkbox" value="4301" checked="checked" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_6" class="checkbox" value="4317" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_7" class="checkbox" value="4310" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_8" class="checkbox" value="4311" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_9" class="checkbox" value="4308" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_10" class="checkbox" value="4305" checked="checked" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_11" class="checkbox" value="4281" checked="checked" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_12" class="checkbox" value="4302" checked="checked" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_13" class="checkbox" value="4314" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_14" class="checkbox" value="4309" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_15" class="checkbox" value="4312" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_16" class="checkbox" value="4315" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_17" class="checkbox" value="4316" checked="checked" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_18" class="checkbox" value="4313" style="display: none;">
+							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_19" class="checkbox" value="4322" style="display: none;">
+
+							<div class="form-item" id="webform-component-hnypt" style="display:none;">
+								<label for="3264_56280_7_103920" class="hnypt">Please leave this field empty:</label>
+								<input type="text" name="3264_56280_7_103920" class="password_alt" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." class="hnypt">
+							</div>
+							<div style="display: none;">
+								<label for="denySubmit">Spam Control Text:</label>
+								<input type="text" name="denySubmit" id="denySubmit" value="" alt="This field is used to prevent form submission by scripts.">Please leave this field empty
+							</div>
+						</div>
+						<div class="table-cell overlap">
+							<div class="form-item" id="webform-component-submit">
+								<input type="submit" name="ACTION_SUBMIT_SURVEY_RESPONSE" id="ACTION_SUBMIT_SURVEY_RESPONSE" value="${cta_lb_text}" class="form-button button red">
+							</div>
+						</div>
+						<input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="56280">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -376,9 +425,9 @@ p.close-lightbox2 {margin-bottom: 0;}
 								<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_18" class="checkbox" value="4313" style="display: none;">
 								<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_19" class="checkbox" value="4322" style="display: none;">
 
-								<div class="form-item" id="webform-component-honeypot">
-									<label for="3264_56280_7_103920" class="honeypot">Please leave this field empty:</label>
-									<input type="text" name="3264_56280_7_103920" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." class="honeypot">
+								<div class="form-item" id="webform-component-hnypt" style="display:none;">
+									<label for="3264_56280_7_103920" class="hnypt">Please leave this field empty:</label>
+									<input type="text" name="3264_56280_7_103920" class="password_alt" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." class="hnypt">
 								</div>
 								<div style="display: none;">
 									<label for="denySubmit">Spam Control Text:</label>
@@ -410,7 +459,7 @@ p.close-lightbox2 {margin-bottom: 0;}
 
 
 <script type="text/javascript">
-  document.getElementById("closeLightbox").addEventListener("click", function(){
+  $("#closeLightbox").on("click", function(){
     document.getElementById('light').style.display='none';
     document.getElementById('fade').style.display='none';
   })
@@ -419,11 +468,11 @@ p.close-lightbox2 {margin-bottom: 0;}
 
 	$(window).bind('scroll load', function(){
 		$(document).ready(function() {
-      console.log("${cookie_name}");
+      // console.log("${cookie_name}");
 			if (!readCookie('${cookie_name}') && showLightbox == true ) {
 				var ScrollTop = parseInt($(window).scrollTop());
 				console.log(ScrollTop);
-				if (ScrollTop > 1000) {
+				if (ScrollTop > 500) {
 					$('#popupDiv').show();
 					var lightBox = document.getElementById('light').style.display='block';
 					document.getElementById('fade').style.display='block';
@@ -442,111 +491,115 @@ p.close-lightbox2 {margin-bottom: 0;}
 
 
 
-      document.getElementById("fade").addEventListener("click", function(){
-        if (document.getElementById("thanksContent").style.display == "block") {
-          $('#popupDiv').hide();
-          $('#popupDiv2').remove();
-					$('#popupDiv').remove();
-					createCookie('${cookie_name}', true, 1);
-        }
-      })
+  $("#fade").on("click", function(){
+    if (document.getElementById("thanksContent").style.display == "block") {
+      $('#popupDiv').hide();
+      $('#popupDiv2').remove();
+			$('#popupDiv').remove();
+			createCookie('${cookie_name}', true, 1);
+			// document.cookie = "${cookie_name}";
+    }
+  })
 
-			$('#hide').click(function() {
-				$('#popupDiv').remove();
-				$('html, body').removeClass('noscroll');
-				createCookie('${cookie_name}', true, 1);
-        $("#popupDiv2").css("display", "block");
-        $(".lightbox_content2").css("display", "block");
-        showLightbox = false;
-        // MEERKAT.SHOW();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-				return false;
-			});
+	$("#hide").on("click", function() {
+		$('#popupDiv').remove();
+		$('html, body').removeClass('noscroll');
+		createCookie('${cookie_name}', true, 1);
+		// document.cookie = "${cookie_name}";
+    $("#popupDiv2").css("display", "block");
+    $(".lightbox_content2").css("display", "block");
+    showLightbox = false;
+    // MEERKAT.SHOW();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		return false;
+	});
 
-			$('#messageClose').click(function() {
-				$('#popupDiv').remove();
-				$('html, body').removeClass('noscroll');
-				createCookie('${cookie_name}', true, 1);
-        $("#popupDiv2").css("display", "block");
-        $(".lightbox_content2").css("display", "block");
-        showLightbox = false;
-        // MEERKAT.SHOW();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-				return false;
-			});
+	$("#messageClose").on("click", function() {
+		$('#popupDiv').remove();
+		$('html, body').removeClass('noscroll');
+		createCookie('${cookie_name}', true, 1);
+		// document.cookie = "${cookie_name}";
+    $("#popupDiv2").css("display", "block");
+    $(".lightbox_content2").css("display", "block");
+    showLightbox = false;
+    // MEERKAT.SHOW();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		return false;
+	});
 
-			$('#thanksClose').click(function() {
-        $('#popupDiv').remove();
-        $('#popupDiv2').remove();
-				$('html, body').removeClass('noscroll');
-				createCookie('${cookie_name}', true, 365);
-				return false;
-			});
+	$("#thanksClose").on("click", function() {
+    $('#popupDiv').remove();
+    $('#popupDiv2').remove();
+		$('html, body').removeClass('noscroll');
+		createCookie('${cookie_name}', true, 365);
+		return false;
+	});
 
-			$('#messageHide').click(function() {
-				$('#popupDiv').remove();
-				$('html, body').removeClass('noscroll');
-				// createCookie('${cookie_name}', true, 1);
-        $("#popupDiv2").css("display", "block");
-        $(".lightbox_content2").css("display", "block");
-        showLightbox = false;
-        // MEERKAT.SHOW();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-				return false;
-			});
+	$("#messageHide").on("click", function() {
+		$('#popupDiv').remove();
+		$('html, body').removeClass('noscroll');
+		createCookie('${cookie_name}', true, 1);
+		// document.cookie = "${cookie_name}";
+    $("#popupDiv2").css("display", "block");
+    $(".lightbox_content2").css("display", "block");
+    showLightbox = false;
+    // MEERKAT.SHOW();;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+		return false;
+	});
 
-			$('#thanksHide').click(function() {
-				$('#popupDiv').remove();
-        $('#popupDiv2').remove();
-				$('html, body').removeClass('noscroll');
-				createCookie('${cookie_name}', true, 365);
-				return false;
-			});
+	$("#thanksHide").on("click", function() {
+		$('#popupDiv').remove();
+    $('#popupDiv2').remove();
+		$('html, body').removeClass('noscroll');
+		createCookie('${cookie_name}', true, 365);
+		return false;
+	});
 
 
 
-			$('#remind').click(function() {
-				$('#popupDiv').hide();
-				$('html, body').removeClass('noscroll');
-				createCookie('${cookie_name}', true, 7);
-				return false;
-			});
+	$("#remind").on("click", function() {
+		$('#popupDiv').hide();
+		$('html, body').removeClass('noscroll');
+		createCookie('${cookie_name}', true, 7);
+		return false;
+	});
 
-			$('#never').click(function() {
-				$('#popupDiv').hide();
-				$('html, body').removeClass('noscroll');
-				createCookie('${cookie_name}', true, 365);
-				return false;
-			});
+	$("#never").on("click", function() {
+		$('#popupDiv').hide();
+		$('html, body').removeClass('noscroll');
+		createCookie('${cookie_name}', true, 365);
+		return false;
+	});
 		// }); //end doc ready?
 
 		// how did this end up here?
 		// var lightBox = document.getElementById('light').style.display='block';
 		// document.getElementById('fade').style.display='block';
 
-		function createCookie(name,value,days) {
-			if (days) {
-				var date = new Date();
-				date.setTime(date.getTime()+(days*24*60*60*1000));
-				var expires = "; expires="+date.toGMTString();
-			}
-			else var expires = "";
-			document.cookie = name+"="+value+expires+"; path=/";
-		}; //end createCookie
+	function createCookie(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+		else var expires = "";
+		document.cookie = name+"="+value+expires+"; path=/";
+	}; //end createCookie
 
-		function readCookie(name) {
-			var nameEQ = name + "=";
-			var ca = document.cookie.split(';');
-			for(var i=0;i < ca.length;i++) {
-				var c = ca[i];
-				while (c.charAt(0)==' ') c = c.substring(1,c.length);
-				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-			}
-			return null;
-		}; //end readCookie
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	}; //end readCookie
 
-		function eraseCookie(name) {
-			createCookie(name,"",-1);
-		} // end eraseCookie
+	function eraseCookie(name) {
+		createCookie(name,"",-1);
+	} // end eraseCookie
 
-	// }) // end scroll?
+// }) // end scroll?
 
 
 
