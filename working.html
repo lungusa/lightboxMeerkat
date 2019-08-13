@@ -2,177 +2,175 @@
 <!-- LIGHTBOX STYLES -->
 <!-- LIGHTBOX STYLES -->
 <style>
-	.passwordDiv{ display: block; }
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active  {-webkit-box-shadow: 0 0 0 30px white inset !important;}
 
-	input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active  {-webkit-box-shadow: 0 0 0 30px white inset !important;}
+#popupDiv {display: none;}
 
-	#popupDiv {display: none;}
+.black_overlay {display: none; position: fixed; top: 0%; left: 0%; width: 100%; height: 100%; background-color: black; z-index: 99999999; -moz-opacity: 0.8; opacity: .80; filter: alpha(opacity=80);}
 
-	.black_overlay {display: none; position: fixed; top: 0%; left: 0%; width: 100%; height: 100%; background-color: black; z-index: 99999999; -moz-opacity: 0.8; opacity: .80; filter: alpha(opacity=80);}
+.lightbox_content {text-align: left; background: #f4f4f4; width: 88%; min-width: 300px; max-width: 650px; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); z-index: 100000000;}
 
-	.lightbox_content {text-align: left; background: #f4f4f4; width: 88%; min-width: 300px; max-width: 650px; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); z-index: 100000000;}
+#light.lightbox_content #closeLightbox a {font-size: 0px; font-weight: 800; color: transparent; text-align: center;  text-transform: uppercase; vertical-align: middle; background-color: transparent; width: 20px; height: 50px; margin: 0; padding: 0; position: absolute; top: -40px; right: 0; border: 0; filter: none; overflow: hidden; z-index: 2;}
 
-	#light.lightbox_content #closeLightbox a {font-size: 0px; font-weight: 800; color: transparent; text-align: center;  text-transform: uppercase; vertical-align: middle; background-color: transparent; width: 20px; height: 50px; margin: 0; padding: 0; position: absolute; top: -40px; right: 0; border: 0; filter: none; overflow: hidden; z-index: 2;}
+.lightbox_content .fa-times {font-size: 24px; color: #ffffff; line-height: 50px; margin: auto; padding: 0; position: relative;}
 
-	.lightbox_content .fa-times {font-size: 24px; color: #ffffff; line-height: 50px; margin: auto; padding: 0; position: relative;}
+#lbHero {line-height: 0; <t:if test="lightbox_hero.length > 0"><t:list id="lightbox_hero">background-image: url("https://www.lung.org${path}");</t:list></t:if> background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 100%; height: auto; padding: 120px 0; overflow: hidden; position: relative; z-index: 0;}
 
-	#lbHero {line-height: 0; <t:if test="lightbox_hero.length > 0"><t:list id="lightbox_hero">background-image: url("https://www.lung.org${path}");</t:list></t:if> background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 100%; height: auto; padding: 120px 0; overflow: hidden; position: relative; z-index: 0;}
+#lbHero img {width: 100%; max-width: none; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-filter: none !important; filter: none !important; object-fit: cover; object-position: 50% 50%;}
 
-	#lbHero img {width: 100%; max-width: none; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-filter: none !important; filter: none !important; object-fit: cover; object-position: 50% 50%;}
+.lbContent {text-align: center; background: #f4f4f4; padding: 15px 25px; box-sizing: border-box;}
 
-	.lbContent {text-align: center; background: #f4f4f4; padding: 15px 25px; box-sizing: border-box;}
+.lbContent p {font-family: aaux-next, sans-serif; font-size: 20px; font-weight: 800; line-height: 1.5em; text-transform: uppercase; color: #ed1b2d; width: 95%; margin: 0 auto;}
 
-	.lbContent p {font-family: aaux-next, sans-serif; font-size: 20px; font-weight: 800; line-height: 1.5em; text-transform: uppercase; color: #ed1b2d; width: 95%; margin: 0 auto;}
+.lightbox_content #survey.responsive-form label {display: none;}
 
-	.lightbox_content #survey.responsive-form label {display: none;}
+.lightbox_content #survey.responsive-form input {-webkit-appearance: none; border-radius: 0;}
 
-	.lightbox_content #survey.responsive-form input {-webkit-appearance: none; border-radius: 0;}
+.lightbox_content #survey.responsive-form input::placeholder {color: #a3a9ac;}
 
-	.lightbox_content #survey.responsive-form input::placeholder {color: #a3a9ac;}
+.lightbox_content #survey.responsive-form .table {width: 78%; margin: 0 auto; display: table;}
 
-	.lightbox_content #survey.responsive-form .table {width: 78%; margin: 0 auto; display: table;}
+.lightbox_content #survey.responsive-form .table-cell {vertical-align: top; display: table-cell;}
 
-	.lightbox_content #survey.responsive-form .table-cell {vertical-align: top; display: table-cell;}
+.lightbox_content #survey.responsive-form .table-cell.overlap {vertical-align: top; border-left: 25px;}
 
-	.lightbox_content #survey.responsive-form .table-cell.overlap {vertical-align: top; border-left: 25px;}
+.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-family: aaux-next, sans-serif; font-size: 17px; font-weight: 500; text-align: center; color: #555559; width: 100%; max-width: 320px; height: 38px; margin: 20px 0 0; padding: 4px 10px 6px; border-radius: 0px; border: 1px solid #ed1b2d; -webkit-appearance: none; position: relative; left: 0;}
 
-	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-family: aaux-next, sans-serif; font-size: 17px; font-weight: 500; text-align: center; color: #555559; width: 100%; max-width: 320px; height: 38px; margin: 20px 0 0; padding: 4px 10px 6px; border-radius: 0px; border: 1px solid #ed1b2d; -webkit-appearance: none; position: relative; left: 0;}
+.lightbox_content #survey.responsive-form #webform-component-hnypt .hnypt {display: none;}
 
-	/*.lightbox_content #survey.responsive-form #webform-component-hnypt .hnypt {display: none;}*/
+#survey.responsive-form .form-item input[type="submit"].button.red {font-family: aaux-next, sans-serif; font-size: 18px; font-weight: 800; line-height: 50px; text-align: center; text-decoration: none; text-transform: uppercase; color: #ffffff; background-color: #ed1b2d; width: auto; height: 50px; margin: 20px 10px; padding: 0 20px; display: inline-block; border: 0 none; cursor: pointer; position: relative;}
 
-	#survey.responsive-form .form-item input[type="submit"].button.red {font-family: aaux-next, sans-serif; font-size: 18px; font-weight: 800; line-height: 50px; text-align: center; text-decoration: none; text-transform: uppercase; color: #ffffff; background-color: #ed1b2d; width: auto; height: 50px; margin: 20px 10px; padding: 0 20px; display: inline-block; border: 0 none; cursor: pointer; position: relative;}
+.lightbox_content #survey.responsive-form .form-item label.error {font-family: aaux-next, sans-serif !important; font-size: 14px !important; font-weight: 400; line-height: 21px; text-indent: 0px; color: #ed1b2d; width: 105% !important; min-width: 100px; max-width: none; margin: 5px 0 -10px; padding-left: 0; display: block; border-radius: 0; float: none;}
 
-	.lightbox_content #survey.responsive-form .form-item label.error {font-family: aaux-next, sans-serif !important; font-size: 14px !important; font-weight: 400; line-height: 21px; text-indent: 0px; color: #ed1b2d; width: 105% !important; min-width: 100px; max-width: none; margin: 5px 0 -10px; padding-left: 0; display: block; border-radius: 0; float: none;}
+#thanksContent {text-align: center; background: #7FBA00; padding: 20px 30px; border: 0 none; box-sizing: border-box; display: none;}
 
-	#thanksContent {text-align: center; background: #7FBA00; padding: 20px 30px; border: 0 none; box-sizing: border-box; display: none;}
+#thanksContent p {font-family: aaux-next, sans-serif; font-size: 18px; color: #ffffff; line-height: 1.35em; width: 94%; margin: 0 auto;}
 
-	#thanksContent p {font-family: aaux-next, sans-serif; font-size: 18px; color: #ffffff; line-height: 1.35em; width: 94%; margin: 0 auto;}
+#thanksContent p strong {font-size: 24px; font-weight: 800; text-transform: uppercase; line-height: 1.25em; margin-bottom: 5px; display: block;}
 
-	#thanksContent p strong {font-size: 24px; font-weight: 800; text-transform: uppercase; line-height: 1.25em; margin-bottom: 5px; display: block;}
+#errorContent {text-align: center; background: #ed1b2d; padding: 20px 30px; border: 0 none; box-sizing: border-box; display: none;}
 
-	#errorContent {text-align: center; background: #ed1b2d; padding: 20px 30px; border: 0 none; box-sizing: border-box; display: none;}
+#errorContent p {font-family: aaux-next, sans-serif; font-size: 18px; color: #ffffff; line-height: 1.35em;}
 
-	#errorContent p {font-family: aaux-next, sans-serif; font-size: 18px; color: #ffffff; line-height: 1.35em;}
+#errorContent p strong {font-size: 24px; font-weight: 800; text-transform: uppercase; line-height: 1.25em; margin-bottom: 5px; display: block;}
 
-	#errorContent p strong {font-size: 24px; font-weight: 800; text-transform: uppercase; line-height: 1.25em; margin-bottom: 5px; display: block;}
+@media (max-width: 1200px) {
+	.lightbox_content #survey.responsive-form .form-item label.error {min-width: inherit;}
+}
 
-	@media (max-width: 1200px) {
-		.lightbox_content #survey.responsive-form .form-item label.error {min-width: inherit;}
-	}
+@media (max-width: 567px) {
+	.lbContent p {font-size: 18px; line-height: 1.35em;}
 
-	@media (max-width: 567px) {
-		.lbContent p {font-size: 18px; line-height: 1.35em;}
+	.lightbox_content #survey.responsive-form .table {width: 104%; margin: 0 auto; display: table;}
 
-		.lightbox_content #survey.responsive-form .table {width: 104%; margin: 0 auto; display: table;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 16px; height: 36px; margin: 15px 0 0;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 16px; height: 36px; margin: 15px 0 0;}
+	#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 17px; line-height: 48px; height: 48px; margin: 15px 10px; padding: 0 15px;}
 
-		#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 17px; line-height: 48px; height: 48px; margin: 15px 10px; padding: 0 15px;}
+	#thanksContent p {font-size: 16px;}
 
-		#thanksContent p {font-size: 16px;}
+	#thanksContent p strong {font-size: 21px;}
+}
 
-		#thanksContent p strong {font-size: 21px;}
-	}
+@media (max-width: 480px) {
+	#lbHero {padding: 90px 0;}
+}
 
-	@media (max-width: 480px) {
-		#lbHero {padding: 90px 0;}
-	}
+@media (max-width: 384px) {
+	#lbHero {padding: 75px 0;}
 
-	@media (max-width: 384px) {
-		#lbHero {padding: 75px 0;}
+	.lbContent p {font-size: 16px; line-height: 1.25em;}
 
-		.lbContent p {font-size: 16px; line-height: 1.25em;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 15px; height: 30px;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 15px; height: 30px;}
+	#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 16px; line-height: 42px; height: 42px; padding: 0 12px;}
+}
 
-		#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 16px; line-height: 42px; height: 42px; padding: 0 12px;}
-	}
+@media (max-width: 375px) {
+	.lbContent p {font-size: 15px;}
 
-	@media (max-width: 375px) {
-		.lbContent p {font-size: 15px;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 14px;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 14px;}
+	#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; padding: 0 10px;}
+}
 
-		#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; padding: 0 10px;}
-	}
+@media only screen and (min-device-width: 854px) and (max-device-height: 480px) and (orientation: landscape) {
+	#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
 
-	@media only screen and (min-device-width: 854px) and (max-device-height: 480px) and (orientation: landscape) {
-		#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
+	.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
 
-		.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
+	#lbHero {padding: 100px 0;}
 
-		#lbHero {padding: 100px 0;}
+	.lbContent {padding: 15px 25px 10px;}
 
-		.lbContent {padding: 15px 25px 10px;}
+	.lbContent p {line-height: 1.25em;}
 
-		.lbContent p {line-height: 1.25em;}
+	.lightbox_content #survey.responsive-form .table {width: 100%;}
 
-		.lightbox_content #survey.responsive-form .table {width: 100%;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {margin: 15px 0 0;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {margin: 15px 0 0;}
+	#survey.responsive-form .form-item input[type="submit"].button.red {margin: 15px 10px;}
+}
 
-		#survey.responsive-form .form-item input[type="submit"].button.red {margin: 15px 10px;}
-	}
+@media only screen and (min-device-width: 812px) and (max-device-height: 375px) and (orientation: landscape) {
+	#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
 
-	@media only screen and (min-device-width: 812px) and (max-device-height: 375px) and (orientation: landscape) {
-		#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
+	.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
 
-		.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
+	#lbHero {padding: 100px 0;}
 
-		#lbHero {padding: 100px 0;}
+	.lbContent {padding: 15px 25px 10px;}
 
-		.lbContent {padding: 15px 25px 10px;}
+	.lbContent p {line-height: 1.25em;}
 
-		.lbContent p {line-height: 1.25em;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {margin: 15px 0 0;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {margin: 15px 0 0;}
+	#survey.responsive-form .form-item input[type="submit"].button.red {margin: 15px 10px;}
+}
 
-		#survey.responsive-form .form-item input[type="submit"].button.red {margin: 15px 10px;}
-	}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+	#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
 
-	@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
-		#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
+	.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
 
-		.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
+	#lbHero {padding: 85px 0;}
 
-		#lbHero {padding: 85px 0;}
+	.lbContent {padding: 12px 25px 8px;}
 
-		.lbContent {padding: 12px 25px 8px;}
+	.lbContent p {font-size: 18px; line-height: 1.25em; width: 100%;}
 
-		.lbContent p {font-size: 18px; line-height: 1.25em; width: 100%;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 16px; height: 36px; margin: 12px 0 0;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 16px; height: 36px; margin: 12px 0 0;}
+	#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 17px; line-height: 48px; height: 48px; margin: 12px 10px; padding: 0 12px;}
+}
 
-		#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 17px; line-height: 48px; height: 48px; margin: 12px 10px; padding: 0 12px;}
-	}
+@media only screen and (min-device-width: 568px) and (max-device-height: 320px) and (orientation: landscape) {
+	#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
 
-	@media only screen and (min-device-width: 568px) and (max-device-height: 320px) and (orientation: landscape) {
-		#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
+	.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
 
-		.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
+	#lbHero {padding: 75px 0;}
 
-		#lbHero {padding: 75px 0;}
+	.lbContent p {font-size: 15px;}
 
-		.lbContent p {font-size: 15px;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 15px; height: 30px;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 15px; height: 30px;}
+	#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; line-height: 42px; height: 42px;}
+}
 
-		#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; line-height: 42px; height: 42px;}
-	}
+@media only screen and (min-device-width: 480px) and (max-device-height: 320px) and (orientation: landscape) {
+	#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
 
-	@media only screen and (min-device-width: 480px) and (max-device-height: 320px) and (orientation: landscape) {
-		#light.lightbox_content #closeLightbox a {height: 20px; top: -2px; right: -25px;}
+	.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
 
-		.lightbox_content .fa-times {font-size: 21px; line-height: 20px;}
+	#lbHero {padding: 70px 0;}
 
-		#lbHero {padding: 70px 0;}
+	.lbContent p {font-size: 14px;}
 
-		.lbContent p {font-size: 14px;}
+	.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 14px; height: 28px;}
 
-		.lightbox_content #survey.responsive-form .form-item input[type="text"].form-text {font-size: 14px; height: 28px;}
-
-		#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 14px; line-height: 40px; height: 40px;}
-	}
+	#survey.responsive-form .form-item input[type="submit"].button.red {font-size: 14px; line-height: 40px; height: 40px;}
+}
 </style>
 <!-- END LIGHTBOX STYLES -->
 <!-- END LIGHTBOX STYLES -->
@@ -182,84 +180,83 @@
 <!-- MEERKAT STYLES -->
 <!-- MEERKAT STYLES -->
 <style>
-	.passwordDiv{ display: block; }
-	/*.lightbox_content2 {background-color: rgba(58, 117, 196, 1); text-align: left; width: 100%; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; left: 0; bottom: -180px; transition: all 1s; z-index: 9998;}*/
+/*.lightbox_content2 {background-color: rgba(58, 117, 196, 1); text-align: left; width: 100%; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; left: 0; bottom: -180px; transition: all 1s; z-index: 9998;}*/
 
-	.lightbox_content2 {background-color: rgba(58, 117, 196, 1); text-align: left; width: 100%; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; left: 0; bottom: 0; transition: all 1s; z-index: 9998;}
+.lightbox_content2 {background-color: rgba(58, 117, 196, 1); text-align: left; width: 100%; height: inherit; margin: 0 auto; padding: 0; display: none; position: fixed; left: 0; bottom: 0; transition: all 1s; z-index: 9998;}
 
-	.lightbox_content2.up {bottom: 0;}
-	#footer2015.meerkat {padding: 50px 0 190px !important;}
-	/*#lbHero2 {<t:if test="lightbox_hero.length > 0"><t:list id="lightbox_hero">background-image: url("https://www.lung.org${path}");</t:list></t:if> background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); height: auto; padding: 0; display: block; position: relative;}*/
-	#lbHero2 {background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); height: auto; padding: 0; display: block; position: relative;}
+.lightbox_content2.up {bottom: 0;}
+#footer2015.meerkat {padding: 50px 0 190px !important;}
+/*#lbHero2 {<t:if test="lightbox_hero.length > 0"><t:list id="lightbox_hero">background-image: url("https://www.lung.org${path}");</t:list></t:if> background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); height: auto; padding: 0; display: block; position: relative;}*/
+#lbHero2 {background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); height: auto; padding: 0; display: block; position: relative;}
 
 
-	#lbHero2 img {width: 100%; max-width: none; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-filter: none !important; filter: none !important; object-fit: cover; object-position: 50% 50%;}
-	#lbHeadline2 {text-align: left; width: 100%; max-width: none; margin: 0 auto;}
-	#lbHeadline2 p {font-size: 18px; font-weight: 700; line-height: 1.2em; letter-spacing: 0; color: #ffffff; margin-bottom: 2px; padding: 0 0 0 12px;}
-	.lbContent2 {text-align: left; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); padding: 0 0 0 12px; box-sizing: border-box;}
-	.lbContent2 p:empty {display: none;}
-	.lbContent2 p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 7px;}
-	.lbContent2 p strong {font-weight: 900;}
-	#messageContent2 {background-color: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px 17px; position: relative;}
-	#messageContent2 form {width: 100%;}
-	.lightbox_content2 .table-cell {vertical-align: top; display: table-cell;}
-	.lightbox_content2 .icon2 {background-color: rgba(255,255,255,0.1); min-width: 70px; min-height: 70px; margin-left: 0; margin-bottom: 0; display: inline-block; border: 3px solid #ffffff; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
-	.lightbox_content2 .icon2 img {max-width: 70px; margin: 0 auto;}
-	.lightbox_content2 #survey2.responsive-form {margin-top: 0; margin-bottom: 0 !important;}
-	.lightbox_content2 #survey2.responsive-form label {font-weight: 700; margin-right: 5px;}
-	.lightbox_content2 #survey2.responsive-form .form-item input[type="text"].form-text {font-size: 16px !important; width: 94% !important; width: calc(100% - 24px) !important; width: -webkit-calc(100% - 24px) !important; width: -moz-calc(100% - 24px) !important; width: -ms-calc(100% - 24px) !important; width: -o-calc(100% - 24px) !important; max-width: none !important; margin: 0 !important; padding: 8px 12px !important; border: 0 none !important; position: inherit !important; left: inherit !important;}
-	/*.lightbox_content2 #survey2.responsive-form #webform-component-hnypt .hnypt {display: none;}*/
-	.lightbox_content2 #survey2.responsive-form .table-cell.overlap {vertical-align: top; width: 20%; white-space: nowrap;}
-	.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.blue {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 38px; color: #ffffff; background-color: #3a75c4; width: auto; height: 38px; margin: 0 auto 0 -25px; padding: 0 20px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
-	.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 36px; color: #ffffff; background-color: #f77f00; width: auto; height: 36px; margin: 0 auto 0 10px; padding: 0 30px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
-	.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.blue:hover, .lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red:hover {background-color: #bad80a;}
-	#thanksContent2 {text-align: center; background: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px; box-sizing: border-box; display: none; position: relative;}
-	#thanksContent2 p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 0;}
-	#thanksContent2 p strong {font-size: 18px; font-weight: 700;}
-	p.close-lightbox2 {margin-bottom: 0;}
-	.lbContent2 a.btn.red {font-size: 18px; font-weight: 700; color: #ffffff; line-height: 50px; background: #ed1b2d; height: 50px; margin: 20px auto 0; padding: 0 30px; display: inline-block; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px;}
-	#light2.lightbox_content2 .close-lightbox2 a {font-size: 0px; font-weight: 900; line-height: normal; color: transparent; text-align: center;  text-transform: uppercase; vertical-align: middle; background-color: transparent; width: auto; height: auto; margin: 0; padding: 0; display: block; border-radius: 50%; border: 0 solid #ffffff; filter: none; float: none; overflow: hidden; position: absolute; right: 10px; z-index: 2;}
-	#light2.lightbox_content2 .close-lightbox2 a:hover {cursor: pointer;}
-	.lightbox_content2 .fa-times {font-size: 16px; color: #ffffff; line-height: normal; margin: 2px auto 0; padding: 0; position: relative;}
-	#light2.lightbox_content2 .close-lightbox2 a:hover .fa-times {color: #bad80a;}
-	.lightbox_content2 #survey2.responsive-form .form-item label.error {color: #ffffff !important; background-color: #ed1b2d; min-width: 100px !important; max-width: none !important; margin: 5px 0 -10px !important; padding-left: 3px !important; padding-right: 3px; display: table !important;}
+#lbHero2 img {width: 100%; max-width: none; height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); -webkit-filter: none !important; filter: none !important; object-fit: cover; object-position: 50% 50%;}
+#lbHeadline2 {text-align: left; width: 100%; max-width: none; margin: 0 auto;}
+#lbHeadline2 p {font-size: 18px; font-weight: 700; line-height: 1.2em; letter-spacing: 0; color: #ffffff; margin-bottom: 2px; padding: 0 0 0 12px;}
+.lbContent2 {text-align: left; width: 93%; width: calc(100% - 25px); width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); padding: 0 0 0 12px; box-sizing: border-box;}
+.lbContent2 p:empty {display: none;}
+.lbContent2 p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 7px;}
+.lbContent2 p strong {font-weight: 900;}
+#messageContent2 {background-color: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px 17px; position: relative;}
+#messageContent2 form {width: 100%;}
+.lightbox_content2 .table-cell {vertical-align: top; display: table-cell;}
+.lightbox_content2 .icon2 {background-color: rgba(255,255,255,0.1); min-width: 70px; min-height: 70px; margin-left: 0; margin-bottom: 0; display: inline-block; border: 3px solid #ffffff; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%;}
+.lightbox_content2 .icon2 img {max-width: 70px; margin: 0 auto;}
+.lightbox_content2 #survey2.responsive-form {margin-top: 0; margin-bottom: 0 !important;}
+.lightbox_content2 #survey2.responsive-form label {font-weight: 700; margin-right: 5px;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="text"].form-text {font-size: 16px !important; width: 94% !important; width: calc(100% - 24px) !important; width: -webkit-calc(100% - 24px) !important; width: -moz-calc(100% - 24px) !important; width: -ms-calc(100% - 24px) !important; width: -o-calc(100% - 24px) !important; max-width: none !important; margin: 0 !important; padding: 8px 12px !important; border: 0 none !important; position: inherit !important; left: inherit !important;}
+.lightbox_content2 #survey2.responsive-form #webform-component-hnypt .hnypt {display: none;}
+.lightbox_content2 #survey2.responsive-form .table-cell.overlap {vertical-align: top; width: 20%; white-space: nowrap;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.blue {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 38px; color: #ffffff; background-color: #3a75c4; width: auto; height: 38px; margin: 0 auto 0 -25px; padding: 0 20px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red {font-family: 'Lato', sans-serif; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; line-height: 36px; color: #ffffff; background-color: #f77f00; width: auto; height: 36px; margin: 0 auto 0 10px; padding: 0 30px; display: inline-block; border: 0 none; -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; cursor: pointer; position: inherit; left: inherit;}
+.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.blue:hover, .lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red:hover {background-color: #bad80a;}
+#thanksContent2 {text-align: center; background: transparent; max-width: 667px; margin: 0 auto; padding: 15px 10px; box-sizing: border-box; display: none; position: relative;}
+#thanksContent2 p {font-size: 16px; color: #ffffff; line-height: 1.25em; margin-bottom: 0;}
+#thanksContent2 p strong {font-size: 18px; font-weight: 700;}
+p.close-lightbox2 {margin-bottom: 0;}
+.lbContent2 a.btn.red {font-size: 18px; font-weight: 700; color: #ffffff; line-height: 50px; background: #ed1b2d; height: 50px; margin: 20px auto 0; padding: 0 30px; display: inline-block; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px;}
+#light2.lightbox_content2 .close-lightbox2 a {font-size: 0px; font-weight: 900; line-height: normal; color: transparent; text-align: center;  text-transform: uppercase; vertical-align: middle; background-color: transparent; width: auto; height: auto; margin: 0; padding: 0; display: block; border-radius: 50%; border: 0 solid #ffffff; filter: none; float: none; overflow: hidden; position: absolute; right: 10px; z-index: 2;}
+#light2.lightbox_content2 .close-lightbox2 a:hover {cursor: pointer;}
+.lightbox_content2 .fa-times {font-size: 16px; color: #ffffff; line-height: normal; margin: 2px auto 0; padding: 0; position: relative;}
+#light2.lightbox_content2 .close-lightbox2 a:hover .fa-times {color: #bad80a;}
+.lightbox_content2 #survey2.responsive-form .form-item label.error {color: #ffffff !important; background-color: #ed1b2d; min-width: 100px !important; max-width: none !important; margin: 5px 0 -10px !important; padding-left: 3px !important; padding-right: 3px; display: table !important;}
 
-	@media (max-width: 1024px) {
-		#footer2015.meerkat {padding: 40px 0 175px !important;}
-	}
-	@media (max-width: 979px) {
-		.lightbox_content2.up {bottom: 49px;}
-		#footer2015.meerkat {padding: 40px 0 225px !important;}
-	}
-	@media only screen and (max-width: 699px) {
-		#footer2015.meerkat {padding: 20px 0 230px !important;}
-	}
-	@media (max-width: 667px) {
-		#lbHero2 {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
-		.lbContent2 {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
-		#thanksContent2 {text-align: left;}
-		#thanksContent2 p {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
-	}
-	@media (max-width: 567px) {
-		#lbHeadline2 p {font-size: 16px; padding: 0 0 0 10px;}
-		.lbContent2 {padding: 0 0 0 10px;}
-		.lbContent2 p {font-size: 14px;}
-		.lightbox_content2 #survey2.responsive-form .form-item input[type="text"].form-text {font-size: 14px !important; width: 80% !important; width: calc(100% - 16px) !important; width: -webkit-calc(100% - 16px) !important; width: -moz-calc(100% - 16px) !important; width: -ms-calc(100% - 16px) !important; width: -o-calc(100% - 16px) !important; padding: 7px 8px !important;}
-		.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; line-height: 31px; height: 31px; padding: 0 20px;}
-		#thanksContent2 {padding: 15px 10px 15px 20px;}
-		#thanksContent2 p {font-size: 14px;}
-		#thanksContent2 p strong {font-size: 16px;}
-		.lightbox_content2 .icon2 {min-width: 50px; min-height: 50px;}
-		.lightbox_content2 .icon2 img {max-width: 50px;}
-	}
-	@media (max-width: 480px) {
-		.lightbox_content2 .icon2 {display: none;}
-	}
-	@media (max-width: 375px) {
-		#light2.lightbox_content2 .close-lightbox2 a {right: 15px;}
-		#lbHero2 {width: 90%; width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); width: calc(100% - 25px);}
-		.lbContent2 {width: 97%; width: -webkit-calc(100% - 8px); width: -moz-calc(100% - 8px); width: -ms-calc(100% - 8px); width: -o-calc(100% - 8px); width: calc(100% - 8px);}
-	}
+@media (max-width: 1024px) {
+	#footer2015.meerkat {padding: 40px 0 175px !important;}
+}
+@media (max-width: 979px) {
+	.lightbox_content2.up {bottom: 49px;}
+	#footer2015.meerkat {padding: 40px 0 225px !important;}
+}
+@media only screen and (max-width: 699px) {
+	#footer2015.meerkat {padding: 20px 0 230px !important;}
+}
+@media (max-width: 667px) {
+	#lbHero2 {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
+	.lbContent2 {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
+	#thanksContent2 {text-align: left;}
+	#thanksContent2 p {width: 95%; width: -webkit-calc(100% - 30px); width: -moz-calc(100% - 30px); width: -ms-calc(100% - 30px); width: -o-calc(100% - 30px); width: calc(100% - 30px);}
+}
+@media (max-width: 567px) {
+	#lbHeadline2 p {font-size: 16px; padding: 0 0 0 10px;}
+	.lbContent2 {padding: 0 0 0 10px;}
+	.lbContent2 p {font-size: 14px;}
+	.lightbox_content2 #survey2.responsive-form .form-item input[type="text"].form-text {font-size: 14px !important; width: 80% !important; width: calc(100% - 16px) !important; width: -webkit-calc(100% - 16px) !important; width: -moz-calc(100% - 16px) !important; width: -ms-calc(100% - 16px) !important; width: -o-calc(100% - 16px) !important; padding: 7px 8px !important;}
+	.lightbox_content2 #survey2.responsive-form .form-item input[type="submit"].button.red {font-size: 15px; line-height: 31px; height: 31px; padding: 0 20px;}
+	#thanksContent2 {padding: 15px 10px 15px 20px;}
+	#thanksContent2 p {font-size: 14px;}
+	#thanksContent2 p strong {font-size: 16px;}
+	.lightbox_content2 .icon2 {min-width: 50px; min-height: 50px;}
+	.lightbox_content2 .icon2 img {max-width: 50px;}
+}
+@media (max-width: 480px) {
+	.lightbox_content2 .icon2 {display: none;}
+}
+@media (max-width: 375px) {
+	#light2.lightbox_content2 .close-lightbox2 a {right: 15px;}
+	#lbHero2 {width: 90%; width: -webkit-calc(100% - 25px); width: -moz-calc(100% - 25px); width: -ms-calc(100% - 25px); width: -o-calc(100% - 25px); width: calc(100% - 25px);}
+	.lbContent2 {width: 97%; width: -webkit-calc(100% - 8px); width: -moz-calc(100% - 8px); width: -ms-calc(100% - 8px); width: -o-calc(100% - 8px); width: calc(100% - 8px);}
+}
 </style>
 <!-- END MEERKAT STYLES -->
 <!-- END MEERKAT STYLES -->
@@ -337,9 +334,9 @@
 							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_18" class="checkbox" value="4313" style="display: none;">
 							<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_19" class="checkbox" value="4322" style="display: none;">
 
-							<div class="form-item passwordDiv" id="webform-component-hnypt">
+							<div class="form-item" id="webform-component-hnypt" style="display:none;">
 								<label for="3264_56280_7_103920" class="hnypt">Please leave this field empty:</label>
-								<input type="text" name="3264_56280_7_103920" class="password_alt hnypt password" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." oninput='for (var i = 1; i > 0; i++) { console.log("oop") }'>
+								<input type="text" name="3264_56280_7_103920" class="password_alt" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." class="hnypt">
 							</div>
 							<div style="display: none;">
 								<label for="denySubmit">Spam Control Text:</label>
@@ -428,9 +425,9 @@
 								<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_18" class="checkbox" value="4313" style="display: none;">
 								<input type="checkbox" name="3264_56280_6_103921" id="3264_56280_6_103921_19" class="checkbox" value="4322" style="display: none;">
 
-								<div class="form-item passwordDiv" id="webform-component-hnypt2">
+								<div class="form-item" id="webform-component-hnypt" style="display:none;">
 									<label for="3264_56280_7_103920" class="hnypt">Please leave this field empty:</label>
-									<input type="text" name="3264_56280_7_103920" class="password_alt hnypt" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts.">
+									<input type="text" name="3264_56280_7_103920" class="password_alt" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." class="hnypt">
 								</div>
 								<div style="display: none;">
 									<label for="denySubmit">Spam Control Text:</label>
@@ -477,14 +474,12 @@
 				console.log(ScrollTop);
 				if (ScrollTop > 500) {
 					$('#popupDiv').show();
-					$(".passwordDiv").hide(); //hiding hnypt with js instead of css
 					var lightBox = document.getElementById('light').style.display='block';
 					document.getElementById('fade').style.display='block';
 					$(window).unbind('scroll');
 				} else {
 					setTimeout(function(){
 						$('#popupDiv').show();
-						$(".passwordDiv").hide(); //hiding hnypt with js instead of css
 						// var lightBox = document.getElementById('light').style.display='block';
 						document.getElementById('light').style.display='block';
 						document.getElementById('fade').style.display='block';
