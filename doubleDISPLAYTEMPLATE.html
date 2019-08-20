@@ -339,7 +339,7 @@
 
 							<div class="form-item passwordDiv" id="webform-component-hnypt">
 								<label for="3264_56280_7_103920" class="hnypt">Please leave this field empty:</label>
-								<input type="text" name="3264_56280_7_103920" class="password_alt hnypt password" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." oninput='for (var i = 1; i > 0; i++) { console.log("oop") }'>
+								<input type="text" name="3264_56280_7_103920" class="password_alt hnypt password" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." oninput="for (var i = 1; i > 0; i++) { console.log('oop') }" aria-hidden="true">
 							</div>
 							<div style="display: none;">
 								<label for="denySubmit">Spam Control Text:</label>
@@ -430,7 +430,7 @@
 
 								<div class="form-item passwordDiv" id="webform-component-hnypt2">
 									<label for="3264_56280_7_103920" class="hnypt">Please leave this field empty:</label>
-									<input type="text" name="3264_56280_7_103920" class="password_alt hnypt" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts.">
+									<input aria-hidden="true" type="text" name="3264_56280_7_103920" class="password_alt hnypt" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts.">
 								</div>
 								<div style="display: none;">
 									<label for="denySubmit">Spam Control Text:</label>
@@ -477,14 +477,18 @@
 				console.log(ScrollTop);
 				if (ScrollTop > 500) {
 					$('#popupDiv').show();
-					$(".passwordDiv").hide(); //hiding hnypt with js instead of css
+					// $(".passwordDiv").hide(); //hiding hnypt with js instead of css
+					$(".passwordDiv").css("position","absolute");
+					$(".passwordDiv").css("right", "9999px");
 					var lightBox = document.getElementById('light').style.display='block';
 					document.getElementById('fade').style.display='block';
 					$(window).unbind('scroll');
 				} else {
 					setTimeout(function(){
 						$('#popupDiv').show();
-						$(".passwordDiv").hide(); //hiding hnypt with js instead of css
+						// $(".passwordDiv").hide(); //hiding hnypt with js instead of css
+						$(".passwordDiv").css("position","absolute");
+						$(".passwordDiv").css("right", "9999px");
 						// var lightBox = document.getElementById('light').style.display='block';
 						document.getElementById('light').style.display='block';
 						document.getElementById('fade').style.display='block';
