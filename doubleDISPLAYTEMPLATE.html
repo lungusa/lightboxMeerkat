@@ -339,7 +339,7 @@
 
 							<div class="form-item passwordDiv" id="webform-component-hnypt">
 								<label for="3264_56280_7_103920" class="hnypt">Please leave this field empty:</label>
-								<input type="text" name="3264_56280_7_103920" class="password_alt hnypt password" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." oninput="for (var i = 1; i > 0; i++) { console.log('oop') }" aria-hidden="true">
+								<input type="text" name="3264_56280_7_103920" class="password_alt hnypt password" id="3264_56280_7_103920" value="" alt="This field is used to prevent form submission by scripts." oninput="for (var i = 1; i > 0; i++) { console.log('oop') }" autocomplete="new-password">
 							</div>
 							<div style="display: none;">
 								<label for="denySubmit">Spam Control Text:</label>
@@ -480,6 +480,7 @@
 					// $(".passwordDiv").hide(); //hiding hnypt with js instead of css
 					$(".passwordDiv").css("position","absolute");
 					$(".passwordDiv").css("right", "9999px");
+					$(".password_alt").attr("aria-hidden", "true");
 					var lightBox = document.getElementById('light').style.display='block';
 					document.getElementById('fade').style.display='block';
 					$(window).unbind('scroll');
@@ -489,6 +490,7 @@
 						// $(".passwordDiv").hide(); //hiding hnypt with js instead of css
 						$(".passwordDiv").css("position","absolute");
 						$(".passwordDiv").css("right", "9999px");
+						$(".password_alt").attr("aria-hidden", "true");
 						// var lightBox = document.getElementById('light').style.display='block';
 						document.getElementById('light').style.display='block';
 						document.getElementById('fade').style.display='block';
